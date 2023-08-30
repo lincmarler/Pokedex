@@ -1,5 +1,6 @@
 import { AboutController } from "./controllers/AboutController.js";
 import { HomeController } from "./controllers/HomeController.js";
+import { PokemonsController } from "./controllers/PokemonsController.js";
 import { ValuesController } from "./controllers/ValuesController.js";
 import { AboutView } from "./views/AboutView.js";
 
@@ -10,14 +11,16 @@ import { AboutView } from "./views/AboutView.js";
 export const router = [
   {
     path: '',
-    controller: HomeController,
+    controller: PokemonsController,
     view: /*html*/`
-    <div class="card">
-      <div class="card-body">
-        <p>Home Page</p>
-        <button class="btn btn-dark" onclick="app.HomeController.testButton()">😎</button>
-      </div>
-    </div>
+ <section class="container-fluid">
+        <div class="row">
+          <div class="col-3 text-center mt-3">
+            <div id="pokeList" class="bg-dark pt-3 pb-2"></div>
+          </div>
+          <div class="col-6" id="activePoke"></div>
+        </div>
+      </section>
     `
   },
   {
